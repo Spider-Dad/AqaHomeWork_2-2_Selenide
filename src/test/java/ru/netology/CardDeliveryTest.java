@@ -35,5 +35,4 @@ public class CardDeliveryTest {
     public String generateTestDate(int addDays, String pattern) {
         return LocalDate.now().plusDays(addDays).format((DateTimeFormatter.ofPattern(pattern)));
     }
-
 }
