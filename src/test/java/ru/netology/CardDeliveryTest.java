@@ -1,6 +1,7 @@
 package ru.netology;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Configuration;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -20,23 +21,23 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class CardDeliveryTest {
-    private WebDriver driver;
+    //private WebDriver driver;
 
-    @BeforeAll
-    static void setupAll() {
-        WebDriverManager.chromedriver().setup();
-    }
+//    @BeforeAll
+//    static void setupAll() {
+//        WebDriverManager.chromedriver().setup();
+//    }
 
     @BeforeEach
     void setUp() {
-        driver = new ChromeDriver();
+        Configuration.browser = "chrome";
     }
 
-    @AfterEach
-    void tearDown() {
-        driver.quit();
-
-    }
+//    @AfterEach
+//    void tearDown() {
+//        driver.quit();
+//
+//    }
 
     public String generateTestDate(int addDays, String pattern) {
         return LocalDate.now().plusDays(addDays).format((DateTimeFormatter.ofPattern(pattern)));
