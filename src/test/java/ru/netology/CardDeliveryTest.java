@@ -30,7 +30,6 @@ public class CardDeliveryTest {
     @BeforeEach
     void setUp() {
         driver = new ChromeDriver();
-        open("http://localhost:9999");
     }
 
     @AfterEach
@@ -41,5 +40,10 @@ public class CardDeliveryTest {
 
     public String generateTestDate(int addDays, String pattern) {
         return LocalDate.now().plusDays(addDays).format((DateTimeFormatter.ofPattern(pattern)));
+    }
+
+    @Test
+    void shouldSendFormTest(){
+        open("http://localhost:9999");
     }
 }
